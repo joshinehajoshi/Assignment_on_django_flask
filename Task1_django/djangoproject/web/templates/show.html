@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Record</title>
+    {% load static %}
+    <linl rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Students ID</th>
+        <th>Students Name</th>
+        <th>Mother's Name</th>
+        <th>Father's Name</th>
+        <th>Email</th>
+        <th>Degree</th>
+        <th>Gender</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    </tbody>
+{% for studentshow in studentvar %}
+    <tr>
+        <td>{{studentshow.sid}}</td>
+        <td>{{studentshow.name}}</td>
+        <td>{{studentshow.father}}</td>
+        <td>{{studentshow.mother}}</td>
+        <td>{{studentshow.email}}</td>
+        <td>{{studentshow.degree}}</td>
+        <td>{{studentshow.gender}}</td>
+        <td>
+            <a href="/edit/{{studentshow.id}}"<span class="glyphicon glyphicon-pencil">Edit</span></a>
+            <a href="/delete/{{studentshow.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+<br>
+<center><a href="/stu" class=">btn btn-primary">Add New Record</a></center>
+</body>

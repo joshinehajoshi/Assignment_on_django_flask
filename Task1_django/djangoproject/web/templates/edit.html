@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{students.id}}">
+    {% csrf_token %}
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+    </div>
+    
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Students ID: </label>
+    <div class="col-sm-4">
+        <input type="text" name="sid" id="id_sid" required maxlength="30" value="{{students.sid}}"/>
+    </div>
+    </div>
+
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Students Name: </label>
+    <div class="col-sm-4">
+        <input type="text" name="sname" id="id_sname" required maxlength="50" value="{{students.name}}"/>
+    </div>
+    </div>
+
+      <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Mother's Name: </label>
+    <div class="col-sm-4">
+        <input type="text" name="smother" id="id_smother" required maxlength="50" value="{{students.mother}}"/>
+    </div>
+    </div>
+
+      <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Father's Name: </label>
+    <div class="col-sm-4">
+        <input type="text" name="sfather" id="id_sfather" required maxlength="50" value="{{students.father}}"/>
+    </div>
+    </div>
+
+   
+
+      <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Email </label>
+    <div class="col-sm-4">
+        <input type="text" name="semail" id="id_semail" required maxlength="50" value="{{students.email}}"/>
+    </div>
+    </div>
+    
+      <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Degree </label>
+    <div class="col-sm-4">
+        <input type="text" name="sdegree" id="id_sdegree" required maxlength="40" value="{{students.degree}}"/>
+    </div>
+    </div>
+
+      <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Gender </label>
+    <div class="col-sm-4">
+        <input type="text" name="sgender" id="id_sgender" required maxlength="10" value="{{students.gender}}"/>
+    </div>
+    </div>
+
+     <div class="form-group row">
+    
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-success">Update</button>
+    </div>
+    </div>
+    </form>
+    </body>
